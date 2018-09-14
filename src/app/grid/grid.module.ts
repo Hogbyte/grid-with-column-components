@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { TableModule } from "primeng/table";
 
 import { GridComponent } from "./grid.component";
+import { ColumnComponent } from "./column/column.component";
 
 @NgModule({
   imports: [
@@ -10,10 +11,12 @@ import { GridComponent } from "./grid.component";
     TableModule
   ],
   declarations: [
-    GridComponent
+    GridComponent,
+    ColumnComponent
   ],
   exports: [
-    GridComponent
+    GridComponent,
+    ColumnComponent
   ]
 })
 export class GridModule { }

@@ -1,2 +1,10 @@
-<app-grid></app-grid>
-
+<label><input type="checkbox" [(ngModel)]="bindData"> Bind Data</label><br />
+<br />
+<app-grid cssClass="widthFixed500"
+          [value]="bindData ? cars : []"
+          emptyMessageText="No cars found.">
+    <app-column headerText="BRAND" dataField="brand" colCssClass="width50"></app-column>    
+    <app-column headerText="COLOR" dataField="color" colCssClass="widthAuto"></app-column>
+    <app-column headerText="YEAR" dataField="year" colCssClass="width25"
+        thCssClass="textDecorationUnderline" tdCssClass="textAlignRight" ></app-column>
+</app-grid>
