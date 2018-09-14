@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { TableModule } from "primeng/table";
 
 import { GridComponent } from "./grid.component";
 
@@ -8,6 +9,7 @@ describe("GridComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ TableModule ],
       declarations: [ GridComponent ]
     })
     .compileComponents();
@@ -19,7 +21,7 @@ describe("GridComponent", () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
