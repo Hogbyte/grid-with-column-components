@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-root",
@@ -6,12 +6,15 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  @Input() bindData: boolean = false;
+  bindData: boolean = false;
+  showColor: boolean = true;
+  showYear: boolean = true;
+  showNotes: boolean = false;
 
   cars: any[] = [
-    { year: 1980, brand: "Ford", color: "blue" },
-    { year: 1990, brand: "Chevrolet", color: "white" },
-    { year: 2000, brand: "Dodge", color: "red" },
-    { year: 2010, brand: "Cadillac", color: "black" },
+    { year: 1980, brand: "Ford", color: "blue", notes: "Ford notes here..." },
+    { year: 1990, brand: "Chevrolet", color: "white", notes: "Chevy notes here..." },
+    { year: 2000, brand: "Dodge", color: "red", notes: "A pattern emerges..." },
+    { year: 2010, brand: "Cadillac", color: "black", notes: "..and is broken." },
   ];
 }

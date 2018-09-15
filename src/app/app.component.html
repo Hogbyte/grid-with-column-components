@@ -1,10 +1,27 @@
-<label><input type="checkbox" [(ngModel)]="bindData"> Bind Data</label><br />
-<br />
-<app-grid cssClass="widthFixed500"
-          [value]="bindData ? cars : []"
+<h3>Cars Table</h3>
+<label><input type="checkbox" [(ngModel)]="bindData">Bind Data</label><br />
+Columns:
+<label><input type="checkbox" [(ngModel)]="showColor" />Color</label>
+<label><input type="checkbox" [(ngModel)]="showYear" />Year</label>
+<label><input type="checkbox" [(ngModel)]="showNotes" />Notes</label>
+<br /><br />
+<app-grid [value]="bindData ? cars : []"
           emptyMessageText="No cars found.">
-    <app-column headerText="BRAND" dataField="brand" colCssClass="width50"></app-column>    
-    <app-column headerText="COLOR" dataField="color" colCssClass="widthAuto"></app-column>
-    <app-column headerText="YEAR" dataField="year" colCssClass="width25"
-        thCssClass="textDecorationUnderline" tdCssClass="textAlignRight" ></app-column>
+    <app-column headerText="BRAND"
+                dataField="brand"
+                colCssClass="widthFixed200"></app-column>    
+    <app-column *ngIf="showColor"
+                headerText="COLOR"
+                dataField="color"
+                colCssClass="widthFixed100"></app-column>
+    <app-column *ngIf="showYear"
+                headerText="YEAR"
+                dataField="year"
+                colCssClass="widthFixed50"
+                thCssClass="textDecorationUnderline"
+                tdCssClass="textAlignRight" ></app-column>
+    <app-column *ngIf="showNotes"
+                headerText="NOTES"
+                dataField="notes"
+                colCssClass="widthFixed200"></app-column>
 </app-grid>

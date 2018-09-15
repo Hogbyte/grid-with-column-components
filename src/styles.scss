@@ -1,10 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
+.ui-table table {
+    width: initial;
+}
+
 .widthAuto { width: auto; }
-.width50 { width: 50%; }
+
+.width30 { width: 30%; }
 .width25 { width: 25%; }
 
-.widthFixed500 { width: 500px; }
+.widthFixed50 { width: 50px; }
+.widthFixed100 { width: 100px; }
+.widthFixed200 { width: 200px; }
 
 .textAlignRight { text-align: right; }
 

@@ -20,7 +20,12 @@ export class GridComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void {
+    // Initial columns
     this.activeColumns = this.columns.toArray();
+    // Column changes
+    this.columns.changes.subscribe((newColumns: any) => {
+      this.activeColumns = newColumns.toArray();
+    });
   }
 
   get hasData(): boolean { return this.value && this.value.length > 0; }
