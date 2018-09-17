@@ -10,4 +10,5 @@ export class ColumnComponent {
   @Input() colCssClass: string = "";
   @Input() thCssClass: string = "";
   @Input() tdCssClass: string = "";
+  @Input() clickEnabled: boolean = true;
 }

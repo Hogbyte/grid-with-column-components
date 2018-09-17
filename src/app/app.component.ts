@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { IRowClickEvent } from "./grid/models/row-click-event.model";
 
 @Component({
   selector: "app-root",
@@ -10,6 +11,7 @@ export class AppComponent {
   showColor: boolean = true;
   showYear: boolean = true;
   showNotes: boolean = false;
+  lastRowClick: any = null;
 
   cars: any[] = [
     { year: 1980, brand: "Ford", color: "blue", notes: "Ford notes here..." },
@@ -17,4 +19,8 @@ export class AppComponent {
     { year: 2000, brand: "Dodge", color: "red", notes: "A pattern emerges..." },
     { year: 2010, brand: "Cadillac", color: "black", notes: "..and is broken." },
   ];
+
+  onRowClick(event: IRowClickEvent): void {
+      this.lastRowClick = event.dataItem;
+  }
 }

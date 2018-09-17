@@ -16,7 +16,8 @@
     <ng-template pTemplate="body" let-item let-columns="columns">
         <tr>
             <td *ngFor="let column of columns"
-                [ngClass]="column.tdCssClass">
+                [ngClass]="column.tdCssClass"
+                (click)="processClick(item, column)">
                 {{ item[column.dataField] }}
             </td>
         </tr>

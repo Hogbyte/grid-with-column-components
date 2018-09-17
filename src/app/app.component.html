@@ -5,8 +5,11 @@ Columns:
 <label><input type="checkbox" [(ngModel)]="showYear" />Year</label>
 <label><input type="checkbox" [(ngModel)]="showNotes" />Notes</label>
 <br /><br />
+<i>*NOTES column does not support left click.</i>
+<br /><br />
 <app-grid [value]="bindData ? cars : []"
-          emptyMessageText="No cars found.">
+          emptyMessageText="No cars found."
+          (rowClick)="onRowClick($event)">
     <app-column headerText="BRAND"
                 dataField="brand"
                 colCssClass="widthFixed200"></app-column>    
@@ -23,5 +26,8 @@ Columns:
     <app-column *ngIf="showNotes"
                 headerText="NOTES"
                 dataField="notes"
-                colCssClass="widthFixed200"></app-column>
+                colCssClass="widthFixed200"
+                [clickEnabled]="false"></app-column>
 </app-grid>
+<br /><br />
+Last Row Clicked: {{ lastRowClick | json }}
