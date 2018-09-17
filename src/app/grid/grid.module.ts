@@ -4,6 +4,7 @@ import { TableModule } from "primeng/table";
 
 import { GridComponent } from "./grid.component";
 import { ColumnComponent } from "./column/column.component";
+import { GridItemFormatPipe } from "./grid-item-format.pipe";
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { ColumnComponent } from "./column/column.component";
   ],
   declarations: [
     GridComponent,
-    ColumnComponent
+    ColumnComponent,
+    GridItemFormatPipe
   ],
   exports: [
     GridComponent,

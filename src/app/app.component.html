@@ -31,3 +31,17 @@ Columns:
 </app-grid>
 <br /><br />
 Last Row Clicked: {{ lastRowClick | json }}
+<br /><br />
+
+<h3>Format Test Table</h3>
+<app-grid [value]="formatTableValues">
+      <app-column headerText="DATE"
+                  dataField="dateValue"
+                  formatType="date"></app-column>
+      <app-column headerText="TEXT (UPPER)"
+                  dataField="textValue"
+                  formatType="uppercase"></app-column>
+      <app-column headerText="TEXT (REVERSE)"
+                  dataField="textValue"
+                  formatType="reverse"></app-column>
+</app-grid>

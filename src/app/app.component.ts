@@ -20,6 +20,10 @@ export class AppComponent {
     { year: 2010, brand: "Cadillac", color: "black", notes: "..and is broken." },
   ];
 
+  formatTableValues: any[] = [
+    { dateValue: new Date(), textValue: "lowercase in raw data "}
+  ];
+
   onRowClick(event: IRowClickEvent): void {
       this.lastRowClick = event.dataItem;
   }

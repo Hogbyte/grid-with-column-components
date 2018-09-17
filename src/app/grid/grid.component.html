@@ -18,7 +18,7 @@
             <td *ngFor="let column of columns"
                 [ngClass]="column.tdCssClass"
                 (click)="processClick(item, column)">
-                {{ item[column.dataField] }}
+                {{ item[column.dataField] | gridItemFormat:column }}
             </td>
         </tr>
     </ng-template>
